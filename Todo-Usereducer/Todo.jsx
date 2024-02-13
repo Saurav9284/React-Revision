@@ -1,6 +1,7 @@
 import React, { useReducer, useState } from 'react';
 
-// Reducer function
+const initialState = [];
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -17,7 +18,7 @@ const reducer = (state, action) => {
 };
 
 const TodoApp = () => {
-  const [todos, dispatch] = useReducer(reducer, []);
+  const [todos, dispatch] = useReducer(reducer, initialState);
   const [input, setInput] = useState('');
 
   const addTodo = () => {
@@ -47,15 +48,12 @@ const TodoApp = () => {
       <button onClick={addTodo}>Add Todo</button>
       <ul>
         {todos.map(todo => (
-          <li key={todo.id}>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => toggleTodo(todo.id)}
-            />
-            <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-              {todo.text}
-            </span>
+          <li
+            key={todo.id}
+            style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+            onClick={() => toggleTodo(todo.id)} // Toggle completion status when clicked
+          >
+            {todo.text}
             <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
