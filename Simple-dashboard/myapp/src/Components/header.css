@@ -1,0 +1,16 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+  }
+
+  .leftheading h1 {
+    color: #66fcf1;
+    
+  }
+  
+  .headerimg {
+    width: 500px;
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,41 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: large;
+    background: transparent;
+}
+.logo {
+    padding: 20px;
+}
+
+.menulist > ul {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+}
+
+.menulist > ul > li {
+    padding: 20px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.buttons {
+    padding: 10px;
+    background-color: rgb(70, 68, 68);
+    color: white;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.buttons:hover {
+    background-color: rgb(24, 26, 26);
+    transition: 1s;
+}
